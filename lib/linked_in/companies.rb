@@ -40,6 +40,7 @@ module LinkedIn
     # @option options [String] :start
     # @return [LinkedIn::Mash]
     def company_search(options = {})
+      # path = "/company-search:(companies:(id,name,universal-name,website-url,logo-url,square_logo_url))?keywords=#{CGI.escape(options[:keyword])}&sort=relevance"
       path = "/company-search:(companies:(id,name,universal-name,website-url,logo-url,square_logo_url))?keywords=#{CGI.escape(options[:keyword])}&sort=relevance"
       # binding.pry
       results = get(path, options)
